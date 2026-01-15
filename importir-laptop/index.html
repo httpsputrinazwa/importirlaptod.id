@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Importir Laptop - Jual Beli Laptop Berkualitas dengan Harga Terjangkau. Garansi 1 Tahun Full Cover.">
+    <meta name="keywords" content="laptop murah, laptop second, laptop garansi, jual beli laptop, importir laptop">
+    <title>Importir Laptop - Laptop Berkualitas Harga Terjangkau</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #FFD22A;
+            --accent: #FFC107;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            background-color: var(--primary);
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            padding: 1rem 0;
+            transition: var(--transition);
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            color: var(--secondary) !important;
+        }
+
+        .navbar-brand img {
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover img {
+            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.9));
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-light) !important;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        /* HERO SECTION - IMPROVED */
+        .hero-section {
+            padding-top: 90px;
+            min-height: 100vh;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -15%;
+            width: 900px;
+            height: 900px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            animation: pulse-bg 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse-bg {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-section>.container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: transparent;
+            padding: 0.7rem 1.4rem;
+            border-radius: 30px;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+            backdrop-filter: blur(10px);
+            animation: fadeInDown 0.8s ease;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            position: relative;
+            width: 100%;
+            perspective: 1000px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-width: 700px;
+            animation: float 6s ease-in-out infinite;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+            transition: var(--transition);
+        }
+
+        .hero-image:hover img {
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.35));
+            transform: translateY(-10px) scale(1.01);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-25px);
+            }
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('images/laptop-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .hero-bg-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, var(--primary) 10%, transparent 100%);
+        }
+
+        @media (max-width: 991px) {
+            .hero-bg-image {
+                width: 100%;
+                opacity: 0.2;
+            }
+
+            .hero-bg-image::after {
+                background: linear-gradient(to bottom, var(--primary) 0%, transparent 100%);
+            }
+        }
+
+        /* Stats Cards */
+        .stats-card {
+            background: transparent;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+            border-color: var(--secondary);
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .stats-card h3 {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* CARDS & HOVER EFFECTS */
+        .hover-card {
+            transition: var(--transition);
+            cursor: pointer;
+            border-radius: 20px !important;
+            overflow: hidden;
+            background: var(--primary);
+            border: 2px solid var(--secondary) !important;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .hover-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .hover-card:hover::before {
+            opacity: 1;
+        }
+
+        .hover-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3) !important;
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .service-icon,
+        .program-icon {
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .hover-card:hover .service-icon,
+        .hover-card:hover .program-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        /* Icon Background Effect */
+        .service-icon::before,
+        .program-icon::before {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .hover-card:hover .service-icon::before,
+        .hover-card:hover .program-icon::before {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        /* TESTIMONIAL SECTION */
+        .testimonial-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 50px rgba(255, 215, 0, 0.35);
+        }
+
+        .testimonial-image {
+            width: 100%;
+            height: 320px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .testimonial-card:hover .testimonial-image img {
+            transform: scale(1.15);
+        }
+
+        .testimonial-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            opacity: 1;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .play-button {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .testimonial-card:hover .play-button {
+            transform: scale(1.2);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7);
+        }
+
+        .testimonial-card:hover .testimonial-overlay {
+            opacity: 1;
+        }
+
+        .testimonial-stars {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            gap: 0.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+            transform: translateY(30px);
+            transition: transform 0.4s ease;
+        }
+
+        .testimonial-card:hover .testimonial-stars {
+            transform: translateY(0);
+        }
+
+        .testimonial-stars i {
+            color: var(--secondary);
+            font-size: 1.1rem;
+            animation: starPulse 1.5s ease infinite;
+        }
+
+        .testimonial-stars i:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .testimonial-stars i:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .testimonial-stars i:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .testimonial-stars i:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .testimonial-stars i:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes starPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* WHATSAPP FLOAT BUTTON */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25D366, #20BA5A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse-wa 2.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.7);
+            color: white;
+        }
+
+        @keyframes pulse-wa {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.8), 0 0 0 15px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* BUTTONS */
+        .btn {
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .btn:hover::before {
+            transform: translateX(100%);
+        }
+
+        .btn-warning {
+            background: var(--secondary);
+            border: none;
+            color: var(--primary) !important;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-warning:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+            color: var(--primary) !important;
+        }
+
+        .btn-dark {
+            background: var(--primary);
+            border: 2px solid var(--secondary);
+            color: var(--text-light) !important;
+        }
+
+        .btn-dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
+            background: var(--secondary);
+            color: var(--primary) !important;
+        }
+
+        .btn-outline-dark {
+            border: 2px solid var(--secondary);
+            color: var(--secondary) !important;
+        }
+
+        .btn-outline-dark:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            background: var(--secondary);
+            color: var(--primary) !important;
+        }
+
+        /* FOOTER */
+        footer a:hover {
+            color: var(--secondary) !important;
+        }
+
+        .btn-outline-warning {
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .btn-outline-warning:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--primary) !important;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Section Dividers */
+        section {
+            position: relative;
+        }
+
+        .section-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            opacity: 0.1;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 991px) {
+            .hero-section {
+                padding-top: 80px;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+            }
+
+            .display-3 {
+                font-size: 2.5rem;
+            }
+
+            .display-5 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .testimonial-image {
+                height: 250px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                font-size: 1.6rem;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .hero-section {
+                padding-top: 70px;
+            }
+
+            .stats-card {
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Utilities */
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .badge {
+            font-weight: 600;
+        }
+
+        .text-warning {
+            color: var(--secondary) !important;
+        }
+
+        .bg-warning {
+            background-color: var(--secondary) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Logo" height="45" class="me-2">
+                <span class="fw-bold">IMPORTIR LAPTOP</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimoni">Testimoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontak">Kontak</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-dark rounded-pill px-4" href="katalog.html">
+                            <i class="fas fa-laptop me-2"></i>Katalog
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-warning rounded-pill px-4 text-dark fw-bold"
+                            href="https://wa.me/6287776777300" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section d-flex align-items-center">
+        <div class="hero-bg-image"></div>
+        <div class="container py-4 position-relative" style="z-index: 2;">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="hero-badge mb-3">
+                        <i class="fas fa-star text-warning"></i>
+                        <span class="ms-2 fw-semibold">Laptop Berkualitas #1 di Indonesia</span>
+                    </div>
+
+                    <h1 class="display-3 fw-bold mb-4 text-white">
+                        Laptop Impian Anda,<br>
+                        Harga <span class="text-warning">Terjangkau</span>
+                    </h1>
+
+                    <p class="lead text-light mb-4" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">
+                        Dapatkan laptop berkualitas premium dengan harga kompetitif.
+                        Garansi 1 tahun full cover dan proses QC ketat untuk kepuasan Anda.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3 mb-5">
+                        <a href="katalog.html" class="btn btn-warning btn-lg rounded-pill px-4 text-dark fw-bold">
+                            <i class="fas fa-laptop me-2"></i>Lihat Katalog
+                        </a>
+                        <a href="https://wa.me/6287776777300" target="_blank"
+                            class="btn btn-outline-light btn-lg rounded-pill px-4">
+                            <i class="fab fa-whatsapp me-2"></i>Konsultasi Gratis
+                        </a>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-4">
+                            <div class="stats-card">
+                                <h3 class="fw-bold mb-1">5000+</h3>
+                                <p class="text-light small mb-0">Pelanggan Puas</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stats-card">
+                                <h3 class="fw-bold mb-1">100%</h3>
+                                <p class="text-light small mb-0">Garansi Original</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stats-card">
+                                <h3 class="fw-bold mb-1">2</h3>
+                                <p class="text-light small mb-0">Outlet Tersedia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYANAN SECTION -->
+    <section id="layanan" class="py-5" style="background: #0a0a0a;">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">LAYANAN KAMI</span>
+                <h2 class="display-5 fw-bold mb-3">Solusi Lengkap untuk Kebutuhan Laptop Anda</h2>
+                <p class="lead text-muted">Kami menyediakan berbagai layanan terbaik dengan tim profesional</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-laptop fs-1 text-warning"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Jual Beli Laptop</h5>
+                            <p class="text-muted">Laptop berkualitas dengan harga terjangkau. Banyak pilihan merek
+                                sesuai kebutuhan.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-exchange-alt fs-1 text-warning"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Tukar Tambah</h5>
+                            <p class="text-muted">Tukar laptop lama dengan yang baru. Proses mudah dan harga yang fair.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-handshake fs-1 text-warning"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Sewa Laptop</h5>
+                            <p class="text-muted">Solusi sewa laptop untuk kebutuhan bisnis maupun personal dengan harga
+                                kompetitif.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-tools fs-1 text-warning"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Service & Upgrade</h5>
+                            <p class="text-muted">Jasa service dan upgrade laptop bergaransi oleh teknisi berpengalaman.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAM SECTION -->
+    <section id="program" class="py-5" style="background: var(--primary);">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">PROGRAM UNGGULAN</span>
+                <h2 class="display-5 fw-bold mb-3">Benefit Eksklusif untuk Pelanggan Setia</h2>
+                <p class="lead text-muted">Nikmati berbagai program menarik yang kami tawarkan</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="program-icon me-3">
+                                    <i class="fas fa-shield-alt fs-2 text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Garansi 1 Tahun FULL COVER</h5>
+                            </div>
+                            <p class="text-muted">Perlindungan penuh selama 1 tahun untuk laptop second. Kami jamin
+                                kualitas optimal.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="program-icon me-3">
+                                    <i class="fas fa-tags fs-2 text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Laptop Core i5 2 Jutaan</h5>
+                            </div>
+                            <p class="text-muted">Laptop performa tinggi dengan prosesor Intel Core i5 mulai dari 2
+                                jutaan!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="program-icon me-3">
+                                    <i class="fas fa-hand-holding-heart fs-2 text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Diskon Amal Khusus</h5>
+                            </div>
+                            <p class="text-muted">Program diskon istimewa untuk Guru Ngaji, Santri, dan Hafidz Quran.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="program-icon me-3">
+                                    <i class="fas fa-comments fs-2 text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Konsultasi Gratis</h5>
+                            </div>
+                            <p class="text-muted">Tim ahli kami siap membantu konsultasi gratis untuk menemukan laptop
+                                yang sesuai.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="program-icon me-3">
+                                    <i class="fas fa-truck fs-2 text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Subsidi Ongkir 50K</h5>
+                            </div>
+                            <p class="text-muted">Nikmati subsidi ongkir hingga 50 ribu untuk pengiriman ke seluruh
+                                Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="card border-0 shadow-sm h-100 hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="program-icon me-3">
+                                    <i class="fas fa-broom fs-2 text-warning"></i>
+                                </div>
+                                <h5 class="fw-bold mb-0">Free Cleaning 1 Tahun</h5>
+                            </div>
+                            <p class="text-muted">Dapatkan layanan cleaning gratis selama 1 tahun untuk menjaga performa
+                                laptop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <section id="testimoni" class="py-5" style="background: #0a0a0a;">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="badge bg-warning text-dark rounded-pill px-3 py-2 mb-3">TESTIMONI</span>
+                <h2 class="display-5 fw-bold mb-3">Apa Kata Pelanggan Kami?</h2>
+                <p class="lead text-muted">Ribuan pelanggan puas telah mempercayai Importir Laptop</p>
+            </div>
+
+            <!-- Photo Testimonials -->
+            <div class="row g-4 mb-4">
+                <div class="col-12 text-center mb-2">
+                    <h5 class="text-white-50">Photo Testimonials</h5>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/testimonials/testi1.jpg" alt="Testimoni Foto 1" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/testimonials/testi2.jpg" alt="Testimoni Foto 2" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="images/testimonials/testi3.jpg" alt="Testimoni Foto 3" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Testimonials -->
+            <div class="row g-4">
+                <div class="col-12 text-center mb-2">
+                    <h5 class="text-white-50">Video Testimonials</h5>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="testimonial-card" onclick="playTestimonial('videos/testi4.MOV')">
+                        <div class="testimonial-image position-relative overflow-hidden" style="height: 250px;">
+                            <video class="w-100 h-100 object-fit-cover" autoplay muted loop playsinline
+                                style="filter: brightness(0.6);">
+                                <source src="videos/testi4.MOV" type="video/quicktime">
+                                <source src="videos/testi4.MOV" type="video/mp4">
+                            </video>
+                            <div class="testimonial-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play" style="margin-left: 4px;"></i>
+                                </div>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+                                <small><i class="fas fa-video me-1"></i> Review Customer 1</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="testimonial-card" onclick="playTestimonial('videos/testi5.MOV')">
+                        <div class="testimonial-image position-relative overflow-hidden" style="height: 250px;">
+                            <video class="w-100 h-100 object-fit-cover" autoplay muted loop playsinline
+                                style="filter: brightness(0.6);">
+                                <source src="videos/testi5.MOV" type="video/quicktime">
+                                <source src="videos/testi5.MOV" type="video/mp4">
+                            </video>
+                            <div class="testimonial-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play" style="margin-left: 4px;"></i>
+                                </div>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+                                <small><i class="fas fa-video me-1"></i> Review Customer 2</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="testimonial-card" onclick="playTestimonial('videos/testi6.MOV')">
+                        <div class="testimonial-image position-relative overflow-hidden" style="height: 250px;">
+                            <video class="w-100 h-100 object-fit-cover" autoplay muted loop playsinline
+                                style="filter: brightness(0.6);">
+                                <source src="videos/testi6.MOV" type="video/quicktime">
+                                <source src="videos/testi6.MOV" type="video/mp4">
+                            </video>
+                            <div class="testimonial-overlay">
+                                <div class="play-button">
+                                    <i class="fas fa-play" style="margin-left: 4px;"></i>
+                                </div>
+                            </div>
+                            <div class="position-absolute bottom-0 start-0 p-3 text-white">
+                                <small><i class="fas fa-video me-1"></i> Review Customer 3</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true" style="backdrop-filter: blur(5px);">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0" style="background: transparent;">
+                <div class="modal-body p-0 position-relative">
+                    <button type="button"
+                        class="btn-close btn-close-white position-absolute top-0 end-0 m-3 z-3 shadow-none"
+                        data-bs-dismiss="modal" aria-label="Close"
+                        style="background-color: var(--secondary); opacity: 0.8;"></button>
+                    <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow-lg border border-warning border-2">
+                        <video id="testimonialVideo" controls class="w-100 h-100 object-fit-cover"
+                            style="background: black;">
+                            <source src="" type="video/mp4">
+                            <source src="" type="video/quicktime">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA SECTION -->
+    <section class="py-5" style="background: var(--secondary);">
+        <div class="container py-5">
+            <div class="row align-items-center" data-aos="fade-up">
+                <div class="col-lg-8 text-center text-lg-start mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-3 text-dark">
+                        Siap Menemukan Laptop <span style="color: var(--primary);">Impian</span> Anda?
+                    </h2>
+                    <p class="lead mb-0 text-dark">Tim profesional kami siap membantu Anda menemukan laptop yang
+                        sempurna!</p>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <a href="https://wa.me/628998889054" target="_blank" class="btn btn-lg rounded-pill px-5 fw-bold"
+                        style="background: var(--primary); border: 2px solid var(--primary); color: var(--secondary) !important;">
+                        <i class="fab fa-whatsapp me-2"></i>Hubungi Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="kontak" class="bg-dark text-white py-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="fw-bold mb-3 text-warning">
+                        <i class="fas fa-laptop me-2"></i>IMPORTIR LAPTOP
+                    </h4>
+                    <p class="text-white-50 mb-4">
+                        Toko laptop terpercaya dengan tenaga profesional yang ahli di bidang IT,
+                        service, dan penjualan. Melayani dengan sepenuh hati.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="https://wa.me/628998889054" target="_blank"
+                            class="btn btn-outline-warning rounded-circle">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/importirlaptop.official" target="_blank"
+                            class="btn btn-outline-warning rounded-circle">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@importirlaptopofficial?is_from_webapp=1&sender_device=pc"
+                            target="_blank" class="btn btn-outline-warning rounded-circle">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold mb-3 text-warning">Layanan</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#layanan" class="text-white-50 text-decoration-none">Jual Beli
+                                Laptop</a></li>
+                        <li class="mb-2"><a href="#layanan" class="text-white-50 text-decoration-none">Tukar Tambah</a>
+                        </li>
+                        <li class="mb-2"><a href="#layanan" class="text-white-50 text-decoration-none">Sewa Laptop</a>
+                        </li>
+                        <li class="mb-2"><a href="#layanan" class="text-white-50 text-decoration-none">Service &
+                                Upgrade</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold mb-3 text-warning">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white-50 text-decoration-none">Tentang Kami</a>
+                        </li>
+                        <li class="mb-2"><a href="katalog.html" class="text-white-50 text-decoration-none">Katalog</a>
+                        </li>
+                        <li class="mb-2"><a href="#testimoni" class="text-white-50 text-decoration-none">Testimoni</a>
+                        </li>
+                        <li class="mb-2"><a href="#kontak" class="text-white-50 text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3 text-warning">Kontak Kami</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-phone me-2 text-warning"></i>+62 899-8889-054
+                        </li>
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-envelope me-2 text-warning"></i>info@importirlaptop.com
+                        </li>
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-map-marker-alt me-2 text-warning"></i>Bandung & Yogyakarta
+                        </li>
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-clock me-2 text-warning"></i>Senin - Sabtu: 09.00 - 18.00
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 border-secondary">
+
+            <div class="text-center text-white-50">
+                <p class="mb-0">&copy; 2025 Importir Laptop. All Rights Reserved. Made with <i
+                        class="fas fa-heart text-danger"></i> putri nazwa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/628998889054" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Testimonial Video Logic
+        function playTestimonial(videoSrc) {
+            const video = document.getElementById('testimonialVideo');
+            video.src = videoSrc;
+            const modal = new bootstrap.Modal(document.getElementById('videoModal'));
+            modal.show();
+
+            // Attempt autoplay
+            video.play().catch(e => console.log('Autoplay prevented:', e));
+        }
+
+        // Stop video when modal closes
+        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+            const video = document.getElementById('testimonialVideo');
+            video.pause();
+            video.currentTime = 0;
+            video.src = ""; // Clear src to stop buffering
+        });
+    </script>
+</body>
+
+</html>

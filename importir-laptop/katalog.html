@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Katalog Laptop - Pilihan laptop berkualitas dengan harga terjangkau">
+    <title>Katalog Laptop - Importir Laptop</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #FFD22A;
+            --accent: #FFC107;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary);
+            color: var(--text-light);
+            overflow-x: hidden;
+        }
+
+        /* Utilities */
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .navbar {
+            padding: 1rem 0;
+            transition: var(--transition);
+            background: rgba(0, 0, 0, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            color: var(--secondary) !important;
+        }
+
+        .navbar-brand img {
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover img {
+            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.9));
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-light) !important;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 60%;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary) !important;
+        }
+
+        .btn-warning {
+            background: var(--secondary);
+            border: none;
+            color: var(--primary) !important;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+            transition: var(--transition);
+        }
+
+        .btn-warning:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+            color: var(--primary) !important;
+        }
+
+        .btn-outline-dark {
+            border: 2px solid var(--secondary);
+            color: var(--secondary) !important;
+        }
+
+        .btn-outline-dark:hover,
+        .btn-outline-dark.active {
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            background: var(--secondary);
+            color: var(--primary) !important;
+            border-color: var(--secondary);
+        }
+
+        .hover-card {
+            transition: var(--transition);
+            cursor: pointer;
+            border-radius: 20px !important;
+            overflow: hidden;
+            background: var(--primary);
+            border: 2px solid var(--secondary) !important;
+            position: relative;
+            color: var(--text-light);
+        }
+
+        .hover-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3) !important;
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .card-img-top {
+            height: 280px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .hover-card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .image-wrapper {
+            overflow: hidden;
+            border-radius: 18px 18px 0 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .badge-category {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            line-height: 1.4;
+            min-height: 50px;
+            color: var(--text-light);
+        }
+
+        .price-container {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(255, 215, 0, 0.3);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #20BA5A);
+            color: #FFF;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            text-decoration: none;
+            animation: pulse-wa 2.5s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.7);
+            color: white;
+        }
+
+        @keyframes pulse-wa {
+
+            0%,
+            100% {
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.8), 0 0 0 15px rgba(37, 211, 102, 0.1);
+            }
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 15px;
+            background-color: #121212;
+            border: 2px solid var(--secondary);
+            color: var(--text-light);
+        }
+
+        .modal-header {
+            border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+            background: #0a0a0a;
+        }
+
+        .modal-title {
+            color: var(--secondary);
+        }
+
+        .btn-close {
+            filter: invert(1);
+        }
+
+        .specs-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .specs-list li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-weight: 600;
+            color: var(--secondary);
+            width: 140px;
+            display: inline-block;
+        }
+
+        .spec-value {
+            color: var(--text-light);
+        }
+
+        .price-section {
+            background: rgba(255, 215, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid var(--secondary);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .discount-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        /* Carousel Customization */
+        .carousel-item img {
+            height: 400px;
+            object-fit: contain;
+            border-radius: 10px;
+            background-color: white;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--secondary);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1) grayscale(100%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Logo Importir Laptop" height="50" class="me-2">
+                <span class="fw-bold fs-5">IMPORTIR LAPTOP</span>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimoni">Testimoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#kontak">Kontak</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-dark rounded-pill px-4 active" href="katalog.html">
+                            <i class="fas fa-laptop me-2"></i>Katalog
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-warning rounded-pill px-4 text-dark fw-bold"
+                            href="https://wa.me/6287776777300" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-5" style="margin-top: 80px; background: rgba(255, 215, 0, 0.05);">
+        <div class="container py-5">
+            <div class="text-center">
+                <h1 class="display-3 fw-bold mb-3 text-white">Katalog Laptop Premium</h1>
+                <p class="lead text-light">Koleksi laptop pilihan dengan kualitas terbaik dan harga kompetitif</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-2">Produk Pilihan Kami</h2>
+                <p class="text-muted">Laptop berkualitas tinggi untuk segala kebutuhan Anda</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Product Card 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 hover-card" onclick="showProductDetail(1)">
+                        <div class="image-wrapper position-relative">
+                            <img src="images/katalog/thinkpad xi carbon 1.jpg" class="card-img-top"
+                                alt="Lenovo ThinkPad X1 Carbon">
+                            <span class="badge bg-danger text-white position-absolute"
+                                style="top: 15px; left: 15px; padding: 8px 15px; border-radius: 25px; font-weight: 600;">
+                                <i class="fas fa-fire me-1"></i>Promo
+                            </span>
+                            <span class="badge bg-success position-absolute"
+                                style="top: 15px; right: 15px; padding: 8px 12px; border-radius: 25px;">
+                                <i class="fas fa-star me-1"></i>4.8
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-category bg-info text-white mb-3">
+                                <i class="fas fa-briefcase me-1"></i>Business
+                            </span>
+                            <h5 class="card-title fw-bold mb-3 product-title">Lenovo ThinkPad X1 Carbon</h5>
+                            <div class="text-muted small mb-3">
+                                <div class="mb-2"><i class="fas fa-microchip me-2 text-warning"></i>Intel Core i5-8250U
+                                </div>
+                                <div class="mb-2"><i class="fas fa-memory me-2 text-warning"></i>8GB RAM</div>
+                                <div><i class="fas fa-hdd me-2 text-warning"></i>256GB SSD</div>
+                            </div>
+                            <div class="price-container">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="w-100">
+                                        <h4 class="fw-bold text-warning mb-0">Rp 4.850.000</h4>
+                                        <small class="text-muted"><i class="fas fa-award me-1"></i>Carbon Fiber</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-outline-warning w-100 fw-bold py-2 rounded-pill"
+                                onclick="event.stopPropagation(); showProductDetail(1)">
+                                <i class="fas fa-eye me-2"></i>Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 hover-card" onclick="showProductDetail(2)">
+                        <div class="image-wrapper position-relative">
+                            <img src="images/katalog/macbook m2 1.jpg" class="card-img-top" alt="MacBook Air M2 2022">
+                            <span class="badge bg-success position-absolute"
+                                style="top: 15px; right: 15px; padding: 8px 12px; border-radius: 25px;">
+                                <i class="fas fa-star me-1"></i>4.5
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-category bg-info text-white mb-3">
+                                <i class="fas fa-briefcase me-1"></i>Business
+                            </span>
+                            <h5 class="card-title fw-bold mb-3 product-title">MacBook Air M2 2022</h5>
+                            <div class="text-muted small mb-3">
+                                <div class="mb-2"><i class="fas fa-microchip me-2 text-warning"></i>Apple M2 Chip</div>
+                                <div class="mb-2"><i class="fas fa-memory me-2 text-warning"></i>8GB Unified Memory
+                                </div>
+                                <div><i class="fas fa-hdd me-2 text-warning"></i>256GB SSD</div>
+                            </div>
+                            <div class="price-container">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="w-100">
+                                        <h4 class="fw-bold text-warning mb-0">Rp 11.485.000</h4>
+                                        <small class="text-muted"><i class="fas fa-award me-1"></i>Garansi 1
+                                            Tahun</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-outline-warning w-100 fw-bold py-2 rounded-pill"
+                                onclick="event.stopPropagation(); showProductDetail(2)">
+                                <i class="fas fa-eye me-2"></i>Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 hover-card" onclick="showProductDetail(3)">
+                        <div class="image-wrapper position-relative">
+                            <img src="images/katalog/ASUS TUF DASH F15 1.jpg" class="card-img-top"
+                                alt="ASUS TUF DASH F15">
+                            <span class="badge bg-warning text-dark position-absolute"
+                                style="top: 15px; left: 15px; padding: 8px 15px; border-radius: 25px; font-weight: 600;">
+                                <i class="fas fa-trophy me-1"></i>Best Seller
+                            </span>
+                            <span class="badge bg-success position-absolute"
+                                style="top: 15px; right: 15px; padding: 8px 12px; border-radius: 25px;">
+                                <i class="fas fa-star me-1"></i>5.0
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-category bg-primary text-white mb-3">
+                                <i class="fas fa-gamepad me-1"></i>Gaming
+                            </span>
+                            <h5 class="card-title fw-bold mb-3 product-title">ASUS TUF DASH F15</h5>
+                            <div class="text-muted small mb-3">
+                                <div class="mb-2"><i class="fas fa-microchip me-2 text-warning"></i>Intel Core i7-12650H
+                                </div>
+                                <div class="mb-2"><i class="fas fa-memory me-2 text-warning"></i>16GB RAM</div>
+                                <div><i class="fas fa-hdd me-2 text-warning"></i>1TB SSD</div>
+                            </div>
+                            <div class="price-container">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="w-100">
+                                        <h4 class="fw-bold text-warning mb-0">Rp 12.985.000</h4>
+                                        <small class="text-muted"><i class="fas fa-award me-1"></i>Military
+                                            Grade</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-outline-warning w-100 fw-bold py-2 rounded-pill"
+                                onclick="event.stopPropagation(); showProductDetail(3)">
+                                <i class="fas fa-eye me-2"></i>Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100 hover-card" onclick="showProductDetail(4)">
+                        <div class="image-wrapper position-relative">
+                            <img src="images/katalog/thinkpad%20L13%201.jpg" class="card-img-top"
+                                alt="Lenovo ThinkPad L13">
+                            <span class="badge bg-success position-absolute"
+                                style="top: 15px; right: 15px; padding: 8px 12px; border-radius: 25px;">
+                                <i class="fas fa-star me-1"></i>4.7
+                            </span>
+                        </div>
+                        <div class="card-body">
+                            <span class="badge badge-category bg-secondary text-white mb-3">
+                                <i class="fas fa-laptop me-1"></i>Ultrabook
+                            </span>
+                            <h5 class="card-title fw-bold mb-3 product-title">Lenovo ThinkPad L13 Yoga</h5>
+                            <div class="text-muted small mb-3">
+                                <div class="mb-2"><i class="fas fa-microchip me-2 text-warning"></i>Intel Core i5-7200U
+                                </div>
+                                <div class="mb-2"><i class="fas fa-memory me-2 text-warning"></i>8GB RAM</div>
+                                <div><i class="fas fa-hdd me-2 text-warning"></i>256GB SSD</div>
+                            </div>
+                            <div class="price-container">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="w-100">
+                                        <h4 class="fw-bold text-warning mb-0">Rp 4.785.000</h4>
+                                        <small class="text-muted"><i class="fas fa-award me-1"></i>Free Stylus</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-outline-warning w-100 fw-bold py-2 rounded-pill"
+                                onclick="event.stopPropagation(); showProductDetail(4)">
+                                <i class="fas fa-eye me-2"></i>Lihat Detail
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalProductName">Detail Produk</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Image Slider (Bootstrap Carousel) -->
+                            <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators" id="carouselIndicators">
+                                    <!-- Indicators generated by JS -->
+                                </div>
+                                <div class="carousel-inner" id="carouselInner">
+                                    <!-- Images generated by JS -->
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark me-2" id="modalCategory">Gaming</span>
+                                <span class="badge bg-success" id="modalRating">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                            </div>
+                            <h4 class="fw-bold mb-3" id="modalTitle">Asus ROG Zephyrus G14</h4>
+
+                            <h6 class="fw-bold mb-3">Spesifikasi:</h6>
+                            <ul class="specs-list" id="modalSpecs">
+                                <!-- Specs will be inserted here by JavaScript -->
+                            </ul>
+
+                            <div class="price-section">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="fw-bold">Harga:</span>
+                                    <span class="discount-badge" id="modalDiscount" style="display: none;">Hemat
+                                        11%</span>
+                                </div>
+                                <div id="modalOriginalPrice" class="original-price mb-1" style="display: none;">Rp
+                                    28.000.000</div>
+                                <div class="discount-price" id="modalPrice">Rp 25.000.000</div>
+                            </div>
+
+                            <div class="d-grid gap-2 mt-4">
+                                <a href="#" onclick="contactProductWa()"
+                                    class="btn btn-warning btn-lg text-dark fw-bold">
+                                    <i class="fab fa-whatsapp me-2"></i>Hubungi Kami di WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <h6 class="fw-bold mb-3">Deskripsi Produk:</h6>
+                        <p class="text-muted" id="modalDescription">
+                            <!-- Description will be inserted here by JavaScript -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white py-5" style="background: #050505; border-top: 1px solid rgba(255, 215, 0, 0.1);">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h4 class="fw-bold mb-3 text-warning">
+                        <i class="fas fa-laptop me-2"></i>IMPORTIR LAPTOP
+                    </h4>
+                    <p class="text-white-50 mb-4">
+                        Toko laptop terpercaya dengan tenaga profesional yang ahli di bidang IT.
+                    </p>
+                    <div class="d-flex gap-2">
+                        <a href="https://wa.me/628998889054" target="_blank"
+                            class="btn btn-outline-warning rounded-circle">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/importirlaptop.official" target="_blank"
+                            class="btn btn-outline-warning rounded-circle">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@importirlaptopofficial?is_from_webapp=1&sender_device=pc"
+                            target="_blank" class="btn btn-outline-warning rounded-circle">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold mb-3 text-warning">Layanan</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html#layanan" class="text-white-50 text-decoration-none">Jual
+                                Beli Laptop</a></li>
+                        <li class="mb-2"><a href="index.html#layanan" class="text-white-50 text-decoration-none">Tukar
+                                Tambah</a></li>
+                        <li class="mb-2"><a href="index.html#layanan" class="text-white-50 text-decoration-none">Sewa
+                                Laptop</a></li>
+                        <li class="mb-2"><a href="index.html#layanan" class="text-white-50 text-decoration-none">Service
+                                & Upgrade</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-6">
+                    <h5 class="fw-bold mb-3 text-warning">Company</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="katalog.html" class="text-white-50 text-decoration-none">Katalog</a>
+                        </li>
+                        <li class="mb-2"><a href="index.html#testimoni"
+                                class="text-white-50 text-decoration-none">Testimoni</a></li>
+                        <li class="mb-2"><a href="index.html#kontak"
+                                class="text-white-50 text-decoration-none">Kontak</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-3 text-warning">Kontak Kami</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-phone me-2 text-warning"></i>+62 899-8889-054
+                        </li>
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-envelope me-2 text-warning"></i>info@importirlaptop.com
+                        </li>
+                        <li class="mb-2 text-white-50">
+                            <i class="fas fa-map-marker-alt me-2 text-warning"></i>Bandung & Yogyakarta
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 border-secondary">
+
+            <div class="text-center text-white-50">
+                <p class="mb-0">&copy; 2025 Importir Laptop. All Rights Reserved. Made with <i
+                        class="fas fa-heart text-danger"></i> putri nazwa</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/628998889054" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Product data
+        const products = {
+            1: {
+                name: 'Lenovo ThinkPad X1 Carbon',
+                category: 'Business Ultrabook',
+                rating: '4.9',
+                price: 'Rp 4.850.000',
+                images: [
+                    'images/katalog/thinkpad xi carbon 1.jpg',
+                    'images/katalog/thinkpad xi carbon 2.jpg',
+                    'images/katalog/thinkpad xi carbon 3.jpg',
+                    'images/katalog/thinkpad xi carbon 4.jpg',
+                    'images/katalog/thinkpad xi carbon 5.jpg'
+                ],
+                specs: {
+                    'Processor': 'Intel Core i5-8250U (Gen 8)',
+                    'RAM': '8GB',
+                    'Storage': '256GB SSD',
+                    'Graphics': 'Intel UHD 620',
+                    'Display': '14" FHD IPS',
+                    'Build': 'Carbon Fiber',
+                    'Features': 'Backlit Keyboard, Fingerprint, Thunderbolt'
+                },
+                description: 'ThinkPad X1 Carbon Gen 6. Laptop bisnis premium dengan material Carbon Fiber yang sangat ringan dan kuat. Performa multitasking cepat dengan prosesor Gen 8. Didesain untuk profesional dengan mobilitas tinggi.'
+            },
+            2: {
+                name: 'MacBook Air M2 2022',
+                category: 'Ultrabook',
+                rating: '5.0',
+                price: 'Rp 11.485.000',
+                images: [
+                    'images/katalog/macbook m2 1.jpg',
+                    'images/katalog/macbook m2 2.jpg',
+                    'images/katalog/macbook m2 3.jpg',
+                    'images/katalog/macbook m2 4.jpg',
+                    'images/katalog/macbook m2 5.jpg'
+                ],
+                specs: {
+                    'Processor': 'Apple M2 Chip',
+                    'RAM': '8GB',
+                    'Storage': '256GB SSD',
+                    'Graphics': 'Apple M2 (Integrated)',
+                    'Display': '13.6" Liquid Retina',
+                    'Battery': '18 Jam',
+                    'Weight': '1.24 kg',
+                    'OS': 'macOS',
+                    'Features': 'Backlit Keyboard, Touch ID, Fanless'
+                },
+                description: 'MacBook Air M2 2022. Desain ultra-tipis dengan performa M2 yang luar biasa kencang dan efisien. Layar Liquid Retina yang memukau dan baterai tahan seharian. Cocok untuk profesional kreatif dan pengguna dengan mobilitas tinggi.'
+            },
+            3: {
+                name: 'ASUS TUF DASH F15',
+                category: 'Gaming Laptop',
+                rating: '4.8',
+                price: 'Rp 12.985.000',
+                images: [
+                    'images/katalog/ASUS TUF DASH F15 1.jpg',
+                    'images/katalog/ASUS TUF DASH F15 2.jpg',
+                    'images/katalog/ASUS TUF DASH F15 3.jpg',
+                    'images/katalog/ASUS TUF DASH F15 4.jpg',
+                    'images/katalog/ASUS TUF DASH F15 5.jpg'
+                ],
+                specs: {
+                    'Processor': 'Intel Core i7-12650H (Gen 12)',
+                    'Graphics': 'RTX 3050 + Intel UHD',
+                    'RAM': '16GB',
+                    'Storage': '1TB SSD',
+                    'Display': '15.6" FHD IPS 144Hz',
+                    'Features': 'Backlit RGB, Thunderbolt, MIL-STD-810H, Dual Fan Cooling'
+                },
+                description: 'Laptop gaming dengan value terbaik di kelasnya. Kombinasi performa tinggi Intel Gen 12 dan RTX 3050 dengan desain elegan. Tangguh dengan sertifikasi Military-grade (MIL-STD-810H).'
+            },
+            4: {
+                name: 'Lenovo ThinkPad L13 Yoga',
+                category: 'Ultrabook (Convertible 4-in-1)',
+                rating: '4.7',
+                price: 'Rp 4.785.000',
+                images: [
+                    'images/katalog/thinkpad L13 1.jpg',
+                    'images/katalog/thinkpad L13 2.jpg',
+                    'images/katalog/thinkpad L13 3.jpg',
+                    'images/katalog/thinkpad L13 4.jpg',
+                    'images/katalog/thinkpad L13 5.jpg'
+                ],
+                specs: {
+                    'Processor': 'Intel Core i5-7200U',
+                    'RAM': '8GB',
+                    'Storage': '256GB SSD',
+                    'Graphics': 'Intel HD 620',
+                    'Display': '13" FHD IPS Touchscreen',
+                    'Battery': 'Good Condition',
+                    'Weight': '1.3 kg',
+                    'OS': 'Windows 10 Pro',
+                    'Features': 'Backlit Keyboard, Fingerprint, Thunderbolt, Stylus'
+                },
+                description: 'Lenovo ThinkPad L13 Yoga (Convertible 2-in-1) dengan kondisi premium. Cocok untuk profesional dan kreator. Bisa dilipat 360 derajat menjadi tablet. Dilengkapi stylus gratis, layar sentuh responsif, dan performa handal untuk multitasking.'
+            }
+        };
+
+        let currentProduct = null;
+        let productCarousel = null;
+
+        function showProductDetail(productId) {
+            currentProduct = products[productId];
+
+            // Update modal content
+            document.getElementById('modalProductName').textContent = currentProduct.name;
+            document.getElementById('modalCategory').textContent = currentProduct.category;
+            document.getElementById('modalRating').innerHTML = `<i class="fas fa-star"></i> ${currentProduct.rating}`;
+            document.getElementById('modalTitle').textContent = currentProduct.name;
+            document.getElementById('modalPrice').textContent = currentProduct.price;
+            document.getElementById('modalDescription').textContent = currentProduct.description;
+
+            // Show/hide original price and discount
+            if (currentProduct.originalPrice) {
+                document.getElementById('modalOriginalPrice').textContent = currentProduct.originalPrice;
+                document.getElementById('modalOriginalPrice').style.display = 'block';
+                document.getElementById('modalDiscount').textContent = currentProduct.discount;
+                document.getElementById('modalDiscount').style.display = 'inline-block';
+            } else {
+                document.getElementById('modalOriginalPrice').style.display = 'none';
+                document.getElementById('modalDiscount').style.display = 'none';
+            }
+
+            // Update specs
+            const specsList = document.getElementById('modalSpecs');
+            specsList.innerHTML = '';
+            for (const [key, value] of Object.entries(currentProduct.specs)) {
+                const li = document.createElement('li');
+                li.innerHTML = `<span class="spec-label">${key}:</span><span class="spec-value">${value}</span>`;
+                specsList.appendChild(li);
+            }
+
+            // Update Carousel Images
+            const carouselInner = document.getElementById('carouselInner');
+            const carouselIndicators = document.getElementById('carouselIndicators');
+
+            carouselInner.innerHTML = '';
+            carouselIndicators.innerHTML = '';
+
+            currentProduct.images.forEach((img, index) => {
+                // Create Slide Item
+                const div = document.createElement('div');
+                div.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+
+                const imgElement = document.createElement('img');
+                imgElement.src = img;
+                imgElement.className = 'd-block w-100';
+                imgElement.alt = `${currentProduct.name} - Image ${index + 1}`;
+                imgElement.onerror = function () {
+                    this.src = 'https://via.placeholder.com/600x400?text=Image+Not+Available';
+                };
+
+                div.appendChild(imgElement);
+                carouselInner.appendChild(div);
+
+                // Create Indicator
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.dataset.bsTarget = '#productCarousel';
+                button.dataset.bsSlideTo = index;
+                button.ariaLabel = `Slide ${index + 1}`;
+                if (index === 0) {
+                    button.className = 'active';
+                    button.ariaCurrent = 'true';
+                }
+                carouselIndicators.appendChild(button);
+            });
+
+            // Show modal
+            const modal = new bootstrap.Modal(document.getElementById('productModal'));
+            modal.show();
+        }
+
+        // Contact Specific Product via WA
+        function contactProductWa() {
+            if (!currentProduct) return;
+            const message = `Halo Importir Laptop, saya tertarik dengan produk *${currentProduct.name}* (${currentProduct.price}). Mohon info detailnya.`;
+            const encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/628998889054?text=${encodedMsg}`, '_blank');
+        }
+    </script>
+</body>
+
+</html>
