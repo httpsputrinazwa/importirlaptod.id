@@ -252,31 +252,29 @@
         .hover-card {
             transition: var(--transition);
             cursor: pointer;
-            border-radius: 20px !important;
+            border-radius: 24px !important;
             overflow: hidden;
-            background: var(--primary);
-            border: 2px solid var(--secondary) !important;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 210, 42, 0.2) !important;
             position: relative;
             color: var(--text-light);
+            backdrop-filter: blur(10px);
         }
 
         .hover-card::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), transparent);
+            background: linear-gradient(135deg, rgba(255, 210, 42, 0.1), transparent);
             opacity: 0;
             transition: var(--transition);
         }
 
-        .hover-card:hover::before {
-            opacity: 1;
-        }
-
         .hover-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3) !important;
-            background: rgba(255, 215, 0, 0.05);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 210, 42, 0.15) !important;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 210, 42, 0.6) !important;
         }
 
         .service-icon,
@@ -740,40 +738,42 @@
                 <p class="lead text-muted">Kami menyediakan berbagai layanan terbaik dengan tim profesional</p>
             </div>
 
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow-sm h-100 hover-card">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon mb-3">
+                        <div class="card-body text-center p-5">
+                            <div class="service-icon mb-4">
                                 <i class="fas fa-laptop fs-1 text-warning"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Jual Beli Laptop</h5>
-                            <p class="text-muted">Laptop berkualitas dengan harga terjangkau. Banyak pilihan merek
+                            <h4 class="fw-bold mb-3">Jual Beli Laptop</h4>
+                            <p class="text-muted mb-0">Laptop berkualitas dengan harga terjangkau. Banyak pilihan merek
                                 sesuai kebutuhan.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card border-0 shadow-sm h-100 hover-card">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon mb-3">
+                        <div class="card-body text-center p-5">
+                            <div class="service-icon mb-4">
                                 <i class="fas fa-exchange-alt fs-1 text-warning"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Tukar Tambah</h5>
-                            <p class="text-muted">Tukar laptop lama dengan yang baru. Proses mudah dan harga yang fair.
+                            <h4 class="fw-bold mb-3">Tukar Tambah</h4>
+                            <p class="text-muted mb-0">Tukar laptop lama dengan yang baru. Proses mudah dan harga yang
+                                fair.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card border-0 shadow-sm h-100 hover-card">
-                        <div class="card-body text-center p-4">
-                            <div class="service-icon mb-3">
+                        <div class="card-body text-center p-5">
+                            <div class="service-icon mb-4">
                                 <i class="fas fa-tools fs-1 text-warning"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Service & Upgrade</h5>
-                            <p class="text-muted">Jasa service dan upgrade laptop bergaransi oleh teknisi berpengalaman.
+                            <h4 class="fw-bold mb-3">Service & Upgrade</h4>
+                            <p class="text-muted mb-0">Jasa service dan upgrade laptop bergaransi oleh teknisi
+                                berpengalaman.
                             </p>
                         </div>
                     </div>
@@ -861,7 +861,8 @@
                                 </div>
                                 <h5 class="fw-bold mb-0">Subsidi Ongkir 50K dan Bisa COD</h5>
                             </div>
-                            <p class="text-muted">Nikmati subsidi ongkir hingga 50 ribu dan Bisa COD pengiriman ke seluruh
+                            <p class="text-muted">Nikmati subsidi ongkir hingga 50 ribu dan Bisa COD pengiriman ke
+                                seluruh
                                 Indonesia.</p>
                         </div>
                     </div>
@@ -1159,4 +1160,3 @@
 
 
 </html>
-
